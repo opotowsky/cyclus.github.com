@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.2.0-41-g711c2f8)',
+        VERSION:     '(1.2.0-138-g92e6c6d)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -121,9 +121,9 @@ if(ga_enabled){
 </table>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">recipe_name:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-odd field"><th class="field-name">recipe_name:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=</p>
 <p><em>commodity recipe name</em></p>
-<p>recipe name for source facility&#8217;s commodity</p>
+<p>Recipe name for source facility&#8217;s commodity.If empty, source supplies material with requested compositions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -148,9 +148,11 @@ if(ga_enabled){
 <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;commod&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;token&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/element&gt;</span>
-<span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;recipe_name&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;token&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;optional&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;recipe_name&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;token&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/optional&gt;</span>
 <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;capacity&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;double&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/element&gt;</span>
@@ -181,6 +183,21 @@ if(ga_enabled){
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
+<tr class="field-odd field"><th class="field-name">recipe_name:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=</p>
+<p><em>input/request recipe name</em></p>
+<p>Name of recipe to request.If empty, sink requests material no particular composition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">uitype:</th><td class="field-body">recipe</td>
+</tr>
+<tr class="field-even field"><th class="field-name">schematype:</th><td class="field-body">token</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
 <tr class="field-odd field"><th class="field-name">in_commods:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
 <p><em>input commodities for the sink</em></p>
 <p>commodities that the sink facility accepts</p>
@@ -221,6 +238,11 @@ if(ga_enabled){
 </table>
 <p><strong>Schema:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;interleave&gt;</span>
+<span class="nt">&lt;optional&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;recipe_name&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;token&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/optional&gt;</span>
 <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;in_commods&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;oneOrMore&gt;</span>
         <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;val&quot;</span><span class="nt">&gt;</span>
@@ -835,7 +857,7 @@ if(ga_enabled){
 
     <div class="footer">
         &copy; Copyright 2012-2014, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Jan 22, 2015.
+      Last updated on Mar 18, 2015.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

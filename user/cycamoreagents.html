@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.2.0-41-g711c2f8)',
+        VERSION:     '(1.2.0-138-g92e6c6d)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -204,17 +204,42 @@ cycamore itself.</p>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">capacity:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
-<p><em>sink capacity</em></p>
-<p>capacity the sink facility can accept at each time step</p>
+<tr class="field-even field"><th class="field-name">recipe_name:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=</p>
+<p><em>requested composition</em></p>
+<p>name of recipe to use for material requests</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">max_inv_size:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
+<tr class="field-odd field"><th class="field-name">social_behav:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=None</p>
+<p><em>social behavior</em></p>
+<p>type of social behavior used in trade decisions: None, Every, Random where behav_interval describes the time interval for behavior action</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">behav_interval:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=0</p>
+<p><em>interval for behavior</em></p>
+<p>interval of social behavior: Every or EveryRandom.  If 0 then behavior is not implemented</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">user_pref:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">int</span></tt>, default=0</p>
+<p><em>user-defined preference</em></p>
+<p>change the default preference for requests from this agent</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">avg_qty:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
+<p><em>sink avg_qty</em></p>
+<p>mean for the normal distribution that is sampled to determine the amount of material actually requested at each time step</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">sigma:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=0</p>
+<p><em>standard deviation</em></p>
+<p>standard deviation (FWHM) of the normal distribution used to generate requested amount of material (avg_qty)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">max_inv_size:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
 <p><em>sink maximum inventory size</em></p>
 <p>total maximum inventory size of sink facility</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">inventory:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">cyclus::toolkit::ResourceBuff</span></tt></p>
+<tr class="field-odd field"><th class="field-name">inventory:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">cyclus::toolkit::ResourceBuff</span></tt></p>
 <table class="last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -237,7 +262,32 @@ cycamore itself.</p>
     <span class="nt">&lt;/oneOrMore&gt;</span>
 <span class="nt">&lt;/element&gt;</span>
 <span class="nt">&lt;optional&gt;</span>
-    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;capacity&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;recipe_name&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/optional&gt;</span>
+<span class="nt">&lt;optional&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;social_behav&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/optional&gt;</span>
+<span class="nt">&lt;optional&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;behav_interval&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;double&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/optional&gt;</span>
+<span class="nt">&lt;optional&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;user_pref&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/optional&gt;</span>
+<span class="nt">&lt;optional&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;avg_qty&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;double&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/optional&gt;</span>
+<span class="nt">&lt;optional&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;sigma&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;double&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/element&gt;</span>
 <span class="nt">&lt;/optional&gt;</span>
@@ -457,20 +507,12 @@ cycamore itself.</p>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">out_commod:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
-<p><em>output commodity</em></p>
-<p>commodity that the enrichment facility supplies</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">uitype:</th><td class="field-body">outcommodity</td>
-</tr>
-</tbody>
-</table>
+<tr class="field-even field"><th class="field-name">out_commods:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<p><em>output commodities</em></p>
+<p>commodities that the enrichment facility supplies</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">in_recipe:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-odd field"><th class="field-name">in_recipe:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
 <p><em>input commodity recipe</em></p>
 <p>recipe for enrichment facility&#8217;s input commodity</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -504,8 +546,13 @@ cycamore itself.</p>
 <p>amount of natural uranium stored at the enrichment facility at the beginning of the simulation</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">current_swu_capacity:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt></p>
+<tr class="field-even field"><th class="field-name">social_behav:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">bool</span></tt>, default=0</p>
+<p><em>social behavior</em></p>
+<p>if set to 1 then enable social behavior in trade decisions</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">current_swu_capacity:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -550,8 +597,12 @@ cycamore itself.</p>
 <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;in_commod&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/element&gt;</span>
-<span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;out_commod&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;out_commods&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;oneOrMore&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;val&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;/oneOrMore&gt;</span>
 <span class="nt">&lt;/element&gt;</span>
 <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;in_recipe&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
@@ -574,6 +625,11 @@ cycamore itself.</p>
 <span class="nt">&lt;optional&gt;</span>
     <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;initial_reserves&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;double&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/optional&gt;</span>
+<span class="nt">&lt;optional&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;social_behav&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;boolean&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/element&gt;</span>
 <span class="nt">&lt;/optional&gt;</span>
 <span class="nt">&lt;/interleave&gt;</span>
@@ -871,7 +927,7 @@ cycamore itself.</p>
 
     <div class="footer">
         &copy; Copyright 2012-2014, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Jan 22, 2015.
+      Last updated on Mar 18, 2015.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
