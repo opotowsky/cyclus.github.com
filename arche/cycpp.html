@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.2.0-138-g92e6c6d)',
+        VERSION:     'b&#39;(1.2.0-169-gb799c02)&#39;',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -697,14 +697,12 @@ code generation.</p>
 a bit long to make users type in, so we would prefer to expose this in the
 input file as <tt class="docutils literal"><span class="pre">matid</span></tt>.  The RNG snippet that you would use for the <tt class="docutils literal"><span class="pre">schema</span></tt>
 is thus:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;schema&#39;</span><span class="p">:</span> <span class="s">&#39;&quot;&lt;element name=</span><span class="se">\\</span><span class="s">&quot;matid</span><span class="se">\\</span><span class="s">&quot;&gt;</span><span class="se">\\</span><span class="s">n&quot;&#39;</span> \
-           <span class="s">&#39;&quot;  &lt;data type=</span><span class="se">\\</span><span class="s">&quot;int</span><span class="se">\\</span><span class="s">&quot; /&gt;</span><span class="se">\\</span><span class="s">n&quot;&#39;</span> \
-           <span class="s">&#39;&quot;&lt;/element&gt;</span><span class="se">\\</span><span class="s">n&quot;&#39;</span><span class="p">}</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;schema&#39;</span><span class="p">:</span> <span class="s">&#39;&lt;element name=&quot;matid&quot;&gt;&#39;</span> \
+           <span class="s">&#39;  &lt;data type=&quot;int&quot; /&gt;&#39;</span> \
+           <span class="s">&#39;&lt;/element&gt;&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>You must double escape the quotes and newlines so that they are written out
-correctly.  You could have also changed the data type or any other valid
-RNG here.</p>
+<p>You can change the data type or any other valid RNG here.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Whenever a state variable name is changed in the <tt class="docutils literal"><span class="pre">schema</span></tt>, you
@@ -730,9 +728,9 @@ does please refer to other code generated samples and refer to other parts
 of the documentation.
 Pulling this all together, we can write our custom schema and initialization
 as follows:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#pragma cyclus var {&#39;schema&#39;: &#39;&quot;&lt;element name=\\&quot;matid\\&quot;&gt;\\n&quot;&#39; \</span>
-<span class="cp">                              &#39;&quot;  &lt;data type=\\&quot;int\\&quot; /&gt;\\n&quot;&#39; \</span>
-<span class="cp">                              &#39;&quot;&lt;/element&gt;\\n&quot;&#39;, \</span>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#pragma cyclus var {&#39;schema&#39;: &#39;&lt;element name=&quot;matid&quot;&gt;&#39; \</span>
+<span class="cp">                              &#39;  &lt;data type=&quot;int&quot; /&gt;&#39; \</span>
+<span class="cp">                              &#39;&lt;/element&gt;&#39;, \</span>
 <span class="cp">                    &#39;infiletodb&#39;: { \</span>
 <span class="cp">                        &#39;read&#39;: &#39;material_identifier = cyclus::Query&lt;int&gt;(tree, &quot;matid&quot;);\n&#39; \</span>
 <span class="cp">                                &#39;if (material_identifier%2 == 1)\n&#39; \</span>
@@ -875,7 +873,7 @@ in much the same way.</p>
 
     <div class="footer">
         &copy; Copyright 2012-2014, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Mar 18, 2015.
+      Last updated on Mar 30, 2015.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

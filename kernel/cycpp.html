@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.2.0-138-g92e6c6d)',
+        VERSION:     'b&#39;(1.2.0-169-gb799c02)&#39;',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -129,6 +129,18 @@ current class level annotations. Enrties here overwrite previous entries.</td>
 </table>
 <p>cycpp is implemented entirely in this file and with tools from the Python standard
 library. It requires Python 2.7+ or Python 3.3+ to run.</p>
+<dl class="function">
+<dt id="cycpp.escape_xml">
+<tt class="descclassname">cycpp.</tt><tt class="descname">escape_xml</tt><big>(</big><em>s</em>, <em>ind='    '</em><big>)</big><a class="headerlink" href="#cycpp.escape_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Escapes xml string s, prettifies it and puts in c++ string lit form.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cycpp.prepare_type">
+<tt class="descclassname">cycpp.</tt><tt class="descname">prepare_type</tt><big>(</big><em>cpptype</em>, <em>othertype</em><big>)</big><a class="headerlink" href="#cycpp.prepare_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates othertype to conform to the length of cpptype using None&#8217;s.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="cycpp.preprocess_file">
 <tt class="descclassname">cycpp.</tt><tt class="descname">preprocess_file</tt><big>(</big><em>filename</em>, <em>includes=()</em>, <em>cpp_path='cpp'</em>, <em>cpp_args=('-xc++'</em>, <em>'-pipe'</em>, <em>'-E'</em>, <em>'-DCYCPP')</em><big>)</big><a class="headerlink" href="#cycpp.preprocess_file" title="Permalink to this definition">¶</a></dt>
@@ -500,17 +512,17 @@ which are fed into a code generator. The new file is returned.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="cycpp.split_template_args">
-<tt class="descclassname">cycpp.</tt><tt class="descname">split_template_args</tt><big>(</big><em>s</em>, <em>open_brace='&lt;'</em>, <em>close_brace='&gt;'</em>, <em>separator='</em>, <em>'</em><big>)</big><a class="headerlink" href="#cycpp.split_template_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>Takes a string with template specialization and returns a list
-of the argument values as strings. Mostly cribbed from xdress.</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="cycpp.parse_template">
 <tt class="descclassname">cycpp.</tt><tt class="descname">parse_template</tt><big>(</big><em>s</em>, <em>open_brace='&lt;'</em>, <em>close_brace='&gt;'</em>, <em>separator='</em>, <em>'</em><big>)</big><a class="headerlink" href="#cycpp.parse_template" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes a string &#8211; which may represent a template specialization &#8211;
-and returns the corresponding type. Mostly cribbed from xdress.</p>
+and returns the corresponding type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cycpp.parse_arg">
+<tt class="descclassname">cycpp.</tt><tt class="descname">parse_arg</tt><big>(</big><em>s</em>, <em>open_brace</em>, <em>close_brace</em>, <em>separator</em><big>)</big><a class="headerlink" href="#cycpp.parse_arg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a string containing one or more c++ template args and returns
+a list of the argument values as strings.</p>
 </dd></dl>
 
 <dl class="function">
@@ -635,7 +647,7 @@ parents of any other class in query_set</p>
 
     <div class="footer">
         &copy; Copyright 2012-2014, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Mar 18, 2015.
+      Last updated on Mar 30, 2015.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
