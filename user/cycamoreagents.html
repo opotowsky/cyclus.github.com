@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.3.0-rc1-22-ge0c3114)',
+        VERSION:     '(1.2.0-332-g1845a13)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -49,10 +49,10 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body>
+  <body role="document">
     <div class="relbar-top">
         
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -69,7 +69,7 @@ if(ga_enabled){
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">Home</a> &raquo;</li>
 
-          <li><a href="index.html" accesskey="U"><span style="font-variant:small-caps;">Cyclus</span> User Guide</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U"><span style="font-variant:small-caps;">Cyclus</span> User Guide</a> &raquo;</li> 
       </ul>
     </div>
     </div>
@@ -78,11 +78,11 @@ if(ga_enabled){
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="cycamore-archetypes">
 <h1>Cycamore Archetypes<a class="headerlink" href="#cycamore-archetypes" title="Permalink to this headline">¶</a></h1>
-<p>This is a collection of archetypes found in the <tt class="docutils literal"><span class="pre">cycamore</span></tt> module that comes with
+<p>This is a collection of archetypes found in the <code class="docutils literal"><span class="pre">cycamore</span></code> module that comes with
 cycamore itself.</p>
 <div class="section" id="cycamore-source">
 <h2>:cycamore:<strong>Source</strong><a class="headerlink" href="#cycamore-source" title="Permalink to this headline">¶</a></h2>
@@ -116,7 +116,7 @@ no more material.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">outcommod:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-odd field"><th class="field-name">outcommod:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p><em>source output commodity</em></p>
 <p>Output commodity on which the source offers material.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -129,7 +129,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">outrecipe:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=</p>
+<tr class="field-even field"><th class="field-name">outrecipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, default=</p>
 <p><em>name of material recipe to provide</em></p>
 <p>Name of composition recipe that this source provides regardless of requested composition. If empty, source creates and provides whatever compositions are requested.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -142,7 +142,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">throughput:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
+<tr class="field-even field"><th class="field-name">throughput:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=1e+299</p>
 <p><em>per time step throughput</em></p>
 <p>amount of commodity that can be supplied at each time step</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -155,7 +155,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">inventory_size:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
+<tr class="field-even field"><th class="field-name">inventory_size:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=1e+299</p>
 <p>Total amount of material this source has remaining. Every trade decreases this value by the supplied material quantity&#8217;. When it reaches zero, the source cannot provide any more material.</p>
 <table class="last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -216,7 +216,7 @@ no more material.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">in_commods:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-odd field"><th class="field-name">in_commods:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p><em>input commodities</em></p>
 <p>commodities that the sink facility accepts</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -229,12 +229,12 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">capacity:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
+<tr class="field-even field"><th class="field-name">capacity:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=1e+299</p>
 <p><em>sink capacity</em></p>
 <p>capacity the sink facility can accept at each time step</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">recipe_name:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=</p>
+<tr class="field-odd field"><th class="field-name">recipe_name:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, default=</p>
 <p><em>requested composition</em></p>
 <p>name of recipe to use for material requests, where the default (empty string) is to accept everything</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -247,7 +247,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">max_inv_size:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
+<tr class="field-even field"><th class="field-name">max_inv_size:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=1e+299</p>
 <p><em>sink maximum inventory size</em></p>
 <p class="last">total maximum inventory size of sink facility</p>
 </td>
@@ -307,7 +307,7 @@ no more material.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">feed_commod:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-odd field"><th class="field-name">feed_commod:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p><em>feed commodity</em></p>
 <p>feed commodity that the enrichment facility accepts</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -320,7 +320,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">product_commod:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-even field"><th class="field-name">product_commod:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p><em>product commodity</em></p>
 <p>product commodity that the enrichment facility generates</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -333,7 +333,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">feed_recipe:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-even field"><th class="field-name">feed_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p><em>feed recipe</em></p>
 <p>recipe for enrichment facility feed commodity</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -346,7 +346,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">tails_commod:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-even field"><th class="field-name">tails_commod:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p><em>tails commodity</em></p>
 <p>tails commodity supplied by enrichment facility</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -359,23 +359,23 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">tails_assay:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=0.03</p>
+<tr class="field-even field"><th class="field-name">tails_assay:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=0.03</p>
 <p><em>tails assay</em></p>
 <p>tails assay from the enrichment process</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">swu_capacity:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
+<tr class="field-odd field"><th class="field-name">swu_capacity:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=1e+299</p>
 <p><em>SWU capacity (kgSWU/month)</em></p>
 <p>separative work unit (SWU) capacity of enrichment facility (kgSWU/month)</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">max_feed_inventory:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=1e+299</p>
 <p><em>max inventory of feed material (kg)</em></p>
 <p>maximum total inventory of natural uranium in the enrichment facility (kg)</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">max_enrich:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1.0</p>
+<tr class="field-odd field"><th class="field-name">max_enrich:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=1.0</p>
 <p><em>maximum allowed enrichment fraction</em></p>
 <p>maximum allowed weight fraction of U235 in product</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -388,12 +388,12 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">initial_feed:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=0</p>
+<tr class="field-even field"><th class="field-name">initial_feed:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=0</p>
 <p><em>initial uranium reserves (kg)</em></p>
 <p>amount of natural uranium stored at the enrichment facility at the beginning of the simulation (kg)</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">order_prefs:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">bool</span></tt>, default=1</p>
+<tr class="field-odd field"><th class="field-name">order_prefs:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">bool</span></code>, default=1</p>
 <p><em>order material requests by U235 content</em></p>
 <p>turn on preference ordering for input material so that EF chooses higher U235 content first</p>
 <table class="last docutils field-list" frame="void" rules="none">
@@ -487,7 +487,7 @@ no more material.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">power_cap:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=0</p>
+<tr class="field-odd field"><th class="field-name">power_cap:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=0</p>
 <p>Amount of electrical power the facility produces when operating normally.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -499,15 +499,15 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">power_name:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=power</p>
+<tr class="field-even field"><th class="field-name">power_name:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, default=power</p>
 <p>The name of the &#8216;power&#8217; commodity used in conjunction with a deployment curve.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">n_assem_batch:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">int</span></tt></p>
-<p>Number of assemblies that constitute a single batch.This is the number of assemblies discharged from the core fully burned each cycle.Batch size is equivalent to <tt class="docutils literal"><span class="pre">n_assem_batch</span> <span class="pre">/</span> <span class="pre">n_assem_core</span></tt>.</p>
+<tr class="field-odd field"><th class="field-name">n_assem_batch:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code></p>
+<p>Number of assemblies that constitute a single batch.This is the number of assemblies discharged from the core fully burned each cycle.Batch size is equivalent to <code class="docutils literal"><span class="pre">n_assem_batch</span> <span class="pre">/</span> <span class="pre">n_assem_core</span></code>.</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">assem_size:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt></p>
+<tr class="field-even field"><th class="field-name">assem_size:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code></p>
 <p>Mass (kg) of a single assembly.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -519,19 +519,19 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">n_assem_core:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">int</span></tt></p>
+<tr class="field-even field"><th class="field-name">n_assem_core:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code></p>
 <p>Number of assemblies that constitute a full core.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">n_assem_spent:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">int</span></tt>, default=1000000000</p>
+<tr class="field-odd field"><th class="field-name">n_assem_spent:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, default=1000000000</p>
 <p>Number of spent fuel assemblies that can be stored on-site before reactor operation stalls.</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">n_assem_fresh:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">int</span></tt>, default=0</p>
+<tr class="field-even field"><th class="field-name">n_assem_fresh:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, default=0</p>
 <p>Number of fresh fuel assemblies to keep on-hand if possible.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">cycle_time:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">int</span></tt></p>
+<tr class="field-odd field"><th class="field-name">cycle_time:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code></p>
 <p>The duration of a full operational cycle (excluding refueling time) in time steps.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -543,7 +543,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">refuel_time:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">int</span></tt></p>
+<tr class="field-even field"><th class="field-name">refuel_time:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code></p>
 <p>The duration of a full refueling period - the minimum time between a cycle end and the start of the next cycle.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -555,7 +555,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">cycle_step:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">int</span></tt>, default=0</p>
+<tr class="field-even field"><th class="field-name">cycle_step:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, default=0</p>
 <p>Number of time steps since the start of the last cycle. Only set this if you know what you are doing</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -567,7 +567,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">fuel_incommods:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-even field"><th class="field-name">fuel_incommods:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p>Ordered list of input commodities on which to requesting fuel.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -579,7 +579,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">fuel_inrecipes:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-even field"><th class="field-name">fuel_inrecipes:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p>Fresh fuel recipes to request for each of the given fuel input commodities (same order).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -592,7 +592,7 @@ no more material.</dd>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">fuel_outrecipes:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p>Spent fuel recipes corresponding to the given fuel input commodities (same order). Fuel received via a particular input commodity is transmuted to the recipe specified here after being burned during a cycle.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -605,7 +605,7 @@ no more material.</dd>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">fuel_outcommods:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p>Output commodities on which to offer spent fuel originally received as each particular  input commodity (same order).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -617,17 +617,17 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">fuel_prefs:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></tt>, default=[]</p>
+<tr class="field-even field"><th class="field-name">fuel_prefs:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, default=[]</p>
 <p>The preference for each type of fresh fuel requested corresponding to each input commodity (same order).  If no preferences are specified, zero is used for all fuel requests (default).</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">pref_change_times:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></tt>, default=[]</p>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code>, default=[]</p>
 <p>A time step on which to change the request preference for a particular fresh fuel type.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">pref_change_commods:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt>, default=[]</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, default=[]</p>
 <p>The input commodity for a particular fuel preference change. Same order as and direct correspondence to the specified preference change times.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -640,17 +640,17 @@ no more material.</dd>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">pref_change_values:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></tt>, default=[]</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, default=[]</p>
 <p>The new/changed request preference for a particular fresh fuel. Same order as and direct correspondence to the specified preference change times.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">recipe_change_times:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></tt>, default=[]</p>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code>, default=[]</p>
 <p>A time step on which to change the input-output recipe pair for a requested fresh fuel.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">recipe_change_commods:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt>, default=[]</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, default=[]</p>
 <p>The input commodity indicating fresh fuel for which recipes will be changed. Same order as and direct correspondence to the specified recipe change times.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -663,7 +663,7 @@ no more material.</dd>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">recipe_change_in:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt>, default=[]</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, default=[]</p>
 <p>The new input recipe to use for this recipe change. Same order as and direct correspondence to the specified recipe change times.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -676,7 +676,7 @@ no more material.</dd>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">recipe_change_out:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt>, default=[]</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, default=[]</p>
 <p>The new output recipe to use for this recipe change. Same order as and direct correspondence to the specified recipe change times.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -688,11 +688,11 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">discharged:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">bool</span></tt>, default=0</p>
+<tr class="field-even field"><th class="field-name">discharged:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">bool</span></code>, default=0</p>
 <p>This should NEVER be set manually.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">res_indexes:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::map&lt;int,</span> <span class="pre">int&gt;</span></tt>, default={}</p>
+<tr class="field-odd field"><th class="field-name">res_indexes:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::map&lt;int,</span> <span class="pre">int&gt;</span></code>, default={}</p>
 <p class="last">This should NEVER be set manually.</p>
 </td>
 </tr>
@@ -879,6 +879,8 @@ no more material.</dd>
 </tr>
 <tr class="field-even field"><th class="field-name">name:</th><td class="field-body">cycamore::Separations</td>
 </tr>
+<tr class="field-odd field"><th class="field-name">niche:</th><td class="field-body">separations</td>
+</tr>
 </tbody>
 </table>
 <p><strong>State Variables:</strong></p>
@@ -886,7 +888,7 @@ no more material.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">throughput:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt></p>
+<tr class="field-odd field"><th class="field-name">throughput:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code></p>
 <p>Maximum quantity of feed material that can be processed per time step.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -898,7 +900,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">feed_commods:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-even field"><th class="field-name">feed_commods:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p>Ordered list of commodities on which to request feed material to separate. Order only matters for matching up with feed commodity preferences if specified.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -911,11 +913,11 @@ no more material.</dd>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">feed_commod_prefs:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></tt>, default=[]</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, default=[]</p>
 <p>Feed commodity request preferences for each of the given feed commodities (same order). If unspecified, default is to use zero for all preferences.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">feed_recipe:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=</p>
+<tr class="field-odd field"><th class="field-name">feed_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, default=</p>
 <p>Name for recipe to be used in feed requests. Empty string results in use of a dummy recipe.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -927,7 +929,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">feedbuf_size:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt></p>
+<tr class="field-even field"><th class="field-name">feedbuf_size:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code></p>
 <p>Maximum amount of feed material to keep on hand.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -940,7 +942,7 @@ no more material.</dd>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">leftoverbuf_size:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=1e+299</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=1e+299</p>
 <p>Maximum amount of leftover separated material (not included in any other stream) that can be stored. If full, the facility halts operation until space becomes available.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -953,7 +955,7 @@ no more material.</dd>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">leftover_commod:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=default-waste-stream</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, default=default-waste-stream</p>
 <p>Commodity on which to trade the leftover separated material stream. This MUST NOT be the same as any commodity used to define the other separations streams.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -965,7 +967,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">streams:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::map&lt;std::string,</span> <span class="pre">std::pair&lt;double,</span> <span class="pre">std::map&lt;int,</span> <span class="pre">double&gt;&gt;&gt;</span></tt></p>
+<tr class="field-even field"><th class="field-name">streams:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::map&lt;std::string,</span> <span class="pre">std::pair&lt;double,</span> <span class="pre">std::map&lt;int,</span> <span class="pre">double&gt;&gt;&gt;</span></code></p>
 <p>Output streams for separations. Each stream must have a unique name identifying the commodity on which its material is traded, a max buffer capacity in kg (neg values indicate infinite size), and a set of component efficiencies. &#8216;comp&#8217; is a component to be separated into the stream (e.g. U, Pu, etc.) and &#8216;eff&#8217; is the mass fraction of the component that is separated from the feed into this output stream. If any stream buffer is full, the facility halts operation until space becomes available. The sum total of all component efficiencies across streams must be less than or equal to 1 (e.g. sum of U efficiencies for all streams must be &lt;= 1).</p>
 <table class="last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1080,6 +1082,8 @@ no more material.</dd>
 </tr>
 <tr class="field-even field"><th class="field-name">name:</th><td class="field-body">cycamore::FuelFab</td>
 </tr>
+<tr class="field-odd field"><th class="field-name">niche:</th><td class="field-body">fabrication</td>
+</tr>
 </tbody>
 </table>
 <p><strong>State Variables:</strong></p>
@@ -1087,7 +1091,7 @@ no more material.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">fill_commod:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-odd field"><th class="field-name">fill_commod:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p>Commodity on which to request material for filler stream.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1099,7 +1103,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">fill_recipe:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-even field"><th class="field-name">fill_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p>Name of recipe to be used in filler material stream requests.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1111,11 +1115,11 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">fill_pref:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=0</p>
+<tr class="field-even field"><th class="field-name">fill_pref:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=0</p>
 <p>Filler material stream request preference.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">fill_size:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt></p>
+<tr class="field-odd field"><th class="field-name">fill_size:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code></p>
 <p>Size of filler material stream inventory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1127,7 +1131,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">fiss_commods:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-even field"><th class="field-name">fiss_commods:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p>Ordered list of commodities on which to requesting fissile stream material.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1140,11 +1144,11 @@ no more material.</dd>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">fiss_commod_prefs:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></tt>, default=[]</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, default=[]</p>
 <p>Fissile stream commodity request preferences for each of the given fissile commodities (same order). If unspecified, default is to use zero for all preferences.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">fiss_recipe:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=</p>
+<tr class="field-odd field"><th class="field-name">fiss_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, default=</p>
 <p>Name for recipe to be used in fissile stream requests. Empty string results in use of an empty dummy recipe.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1156,7 +1160,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">fiss_size:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt></p>
+<tr class="field-even field"><th class="field-name">fiss_size:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code></p>
 <p>Size of fissile material stream inventory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1168,7 +1172,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">topup_commod:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=</p>
+<tr class="field-even field"><th class="field-name">topup_commod:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, default=</p>
 <p>Commodity on which to request material for top-up stream. This MUST be set if &#8216;topup_size &gt; 0&#8217;.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1180,7 +1184,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">topup_recipe:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt>, default=</p>
+<tr class="field-even field"><th class="field-name">topup_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, default=</p>
 <p>Name of recipe to be used in top-up material stream requests. This MUST be set if &#8216;topup_size &gt; 0&#8217;.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1192,11 +1196,11 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">topup_pref:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=0</p>
+<tr class="field-even field"><th class="field-name">topup_pref:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=0</p>
 <p>Top-up material stream request preference.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">topup_size:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt>, default=0</p>
+<tr class="field-odd field"><th class="field-name">topup_size:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, default=0</p>
 <p>Size of top-up material stream inventory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1208,11 +1212,11 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">spectrum:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-even field"><th class="field-name">spectrum:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p>The type of cross-sections to use for composition property calculation. Use &#8216;fission_spectrum_ave&#8217; for fast reactor compositions or &#8216;thermal&#8217; for thermal reactors.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">outcommod:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-odd field"><th class="field-name">outcommod:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p>Commodity on which to offer/supply mixed fuel material.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1224,7 +1228,7 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">throughput:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">double</span></tt></p>
+<tr class="field-even field"><th class="field-name">throughput:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code></p>
 <p>Maximum number of kg of fuel material that can be supplied per time step.</p>
 <table class="last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1334,7 +1338,7 @@ no more material.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">prototypes:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-odd field"><th class="field-name">prototypes:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p>Ordered list of prototypes to build.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1346,15 +1350,15 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">build_times:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></tt></p>
+<tr class="field-even field"><th class="field-name">build_times:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code></p>
 <p>Time step on which to build agents given in prototypes (same order).</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">n_build:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></tt></p>
+<tr class="field-odd field"><th class="field-name">n_build:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code></p>
 <p>Number of each prototype in prototypes var to build (same order).</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">lifetimes:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></tt>, default=[]</p>
+<tr class="field-even field"><th class="field-name">lifetimes:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code>, default=[]</p>
 <p class="last">Lifetimes for each prototype in protos (same order). These lifetimes override the lifetimes in the original prototype definition. If unspecified, lifetimes from the original prototype definitions are used. Although a new prototype is created in the Prototypes table for each lifetime with the suffix &#8216;_life_[lifetime]&#8217;, all deployed agents themselves will have the same original prototype name (and so will the Agents tables).</p>
 </td>
 </tr>
@@ -1419,7 +1423,7 @@ no more material.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">prototypes:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-odd field"><th class="field-name">prototypes:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p><em>facility prototypes</em></p>
 <p>a facility to be managed by the institution</p>
 <table class="last docutils field-list" frame="void" rules="none">
@@ -1470,7 +1474,7 @@ no more material.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">commodity_name:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::string</span></tt></p>
+<tr class="field-odd field"><th class="field-name">commodity_name:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code></p>
 <p><em>commodity in demand</em></p>
 <p>name of the commodity experiencing a growth in demand</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1483,17 +1487,17 @@ no more material.</dd>
 </table>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">demand_types:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-even field"><th class="field-name">demand_types:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p><em>demand type</em></p>
 <p>mathematical description of demand growth (i.e., linear, exponential, piecewise)</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">demand_params:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></tt></p>
+<tr class="field-odd field"><th class="field-name">demand_params:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code></p>
 <p><em>demand parameters</em></p>
 <p>parameters that define the behavior of the demand type function</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">demand_times:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></tt></p>
+<tr class="field-even field"><th class="field-name">demand_times:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code></p>
 <p><em>demand times</em></p>
 <p class="last">vector describing the length of times regarding the piecewise demand type</p>
 </td>
@@ -1536,7 +1540,7 @@ no more material.</dd>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
         <p class="logo"><a href="../index.html" title="index">
           <img class="logo" src="../_static/big_c.png" alt="Logo"/>
@@ -1583,7 +1587,7 @@ no more material.</dd>
     </ul></li></ul>
   </div>
     
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -1632,7 +1636,7 @@ no more material.</dd>
     </div>
     <div class="relbar-bottom">
         
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -1649,14 +1653,14 @@ no more material.</dd>
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">Home</a> &raquo;</li>
 
-          <li><a href="index.html" ><span style="font-variant:small-caps;">Cyclus</span> User Guide</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" ><span style="font-variant:small-caps;">Cyclus</span> User Guide</a> &raquo;</li> 
       </ul>
     </div>
     </div>
 
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2012-2014, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on May 05, 2015.
+      Last updated on May 06, 2015.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

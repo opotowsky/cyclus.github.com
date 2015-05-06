@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.3.0-rc1-22-ge0c3114)',
+        VERSION:     '(1.2.0-332-g1845a13)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -49,10 +49,10 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body>
+  <body role="document">
     <div class="relbar-top">
         
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -69,7 +69,7 @@ if(ga_enabled){
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">Home</a> &raquo;</li>
 
-          <li><a href="cep0.html" accesskey="U"><span style="font-variant:small-caps;">Cyclus</span> Enhancement Proposals</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="cep0.html" accesskey="U"><span style="font-variant:small-caps;">Cyclus</span> Enhancement Proposals</a> &raquo;</li> 
       </ul>
     </div>
     </div>
@@ -78,7 +78,7 @@ if(ga_enabled){
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="cep-3-cyclus-release-procedure">
 <h1>CEP 3 - <span style="font-variant:small-caps;">Cyclus</span> Release Procedure<a class="headerlink" href="#cep-3-cyclus-release-procedure" title="Permalink to this headline">¶</a></h1>
@@ -119,8 +119,8 @@ stable.)  The projects that are under the release manager&#8217;s purview are:</
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/cyclus/cyclus">Cyclus</a></li>
 <li><a class="reference external" href="https://github.com/cyclus/cycamore">Cycamore</a></li>
-<li><a class="reference external" href="https://github.com/cyclus/cycstub">Cycstub</a> - copy the files from <span style="font-variant:small-caps;">Cyclus</span> core&#8217;s <tt class="docutils literal"><span class="pre">stub/</span></tt> dir into the
-cycstub&#8217;s <tt class="docutils literal"><span class="pre">src/</span></tt> dir.</li>
+<li><a class="reference external" href="https://github.com/cyclus/cycstub">Cycstub</a> - copy the files from <span style="font-variant:small-caps;">Cyclus</span> core&#8217;s <code class="docutils literal"><span class="pre">stub/</span></code> dir into the
+cycstub&#8217;s <code class="docutils literal"><span class="pre">src/</span></code> dir.</li>
 </ul>
 <p>The projects which are not yet under the release managers purview are:</p>
 <ul class="simple">
@@ -142,8 +142,8 @@ getting released early.</p>
 release candidates out.  They are akin to a temporary second level of staging
 to be used to keep master clean and safe.  As such, everything that is in this
 branch should also be part of develop.  Graphically,</p>
-<div class="figure align-center">
-<img src="../_images/cep-0003-1.svg" /><p class="caption"><strong>Figure 1:</strong> Branch hierarchy under release.</p>
+<div class="figure align-center" id="id4">
+<img src="../_images/cep-0003-1.svg" /><p class="caption"><span class="caption-text"><strong>Figure 1:</strong> Branch hierarchy under release.</span></p>
 </div>
 <p>Every time a new release candidate comes out the vX.X.X-release should be
 tagged with the name &#8216;X.X.X-rcX&#8217;.  There should be a 2 - 5 day period of time
@@ -184,8 +184,8 @@ with the name &#8216;X.X.X&#8217;.  Finally, delete the release branch.</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">To distingush them, branch names have a <tt class="docutils literal"><span class="pre">v</span></tt> prefix (<tt class="docutils literal"><span class="pre">vX.X.X</span></tt>) while tag
-names lack this prefix (<tt class="docutils literal"><span class="pre">X.X.X</span></tt>).</p>
+<p class="last">To distingush them, branch names have a <code class="docutils literal"><span class="pre">v</span></code> prefix (<code class="docutils literal"><span class="pre">vX.X.X</span></code>) while tag
+names lack this prefix (<code class="docutils literal"><span class="pre">X.X.X</span></code>).</p>
 </div>
 </div>
 <div class="section" id="maintainence-tasks">
@@ -213,7 +213,7 @@ The command for generating <span style="font-variant:small-caps;">Cyclus</span> 
 </div>
 <p>Once the file is generated it must be put onto rackspace.</p>
 <p><strong>Update Gtest:</strong> We include a copy of the fused Gtest source code within our
-source tree located in the <tt class="docutils literal"><span class="pre">tests/GoogleTest</span></tt> directory.  To keep up with
+source tree located in the <code class="docutils literal"><span class="pre">tests/GoogleTest</span></code> directory.  To keep up with
 Gtest&#8217;s natural evolution cycle, please download the latest release of Google Tests
 and follow <a class="reference external" href="https://code.google.com/p/googletest/wiki/V1_6_AdvancedGuide#Fusing_Google_Test_Source_Files">the fused source directions here</a>.  If we go too long without doing this,
 it could be very painful to update.</p>
@@ -238,7 +238,7 @@ in this release to the database with the following command:</p>
 <span class="nv">$ </span>./smbchk.py --update -t X.X.X
 </pre></div>
 </div>
-<p>where <tt class="docutils literal"><span class="pre">X.X.X</span></tt> is the version tag. This should alter the <tt class="docutils literal"><span class="pre">symbols.json</span></tt>
+<p>where <code class="docutils literal"><span class="pre">X.X.X</span></code> is the version tag. This should alter the <code class="docutils literal"><span class="pre">symbols.json</span></code>
 file.  Commit this and add it to the repo.</p>
 </div>
 <div class="section" id="cycamore">
@@ -306,7 +306,7 @@ Use the following BASH commands to do so:</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
         <p class="logo"><a href="../index.html" title="index">
           <img class="logo" src="../_static/big_c.png" alt="Logo"/>
@@ -355,7 +355,7 @@ Use the following BASH commands to do so:</p>
     </ul></li></ul>
   </div>
     
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -404,7 +404,7 @@ Use the following BASH commands to do so:</p>
     </div>
     <div class="relbar-bottom">
         
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -421,14 +421,14 @@ Use the following BASH commands to do so:</p>
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">Home</a> &raquo;</li>
 
-          <li><a href="cep0.html" ><span style="font-variant:small-caps;">Cyclus</span> Enhancement Proposals</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="cep0.html" ><span style="font-variant:small-caps;">Cyclus</span> Enhancement Proposals</a> &raquo;</li> 
       </ul>
     </div>
     </div>
 
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2012-2014, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on May 05, 2015.
+      Last updated on May 06, 2015.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
